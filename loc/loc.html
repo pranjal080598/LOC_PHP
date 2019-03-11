@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- useful meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="description" content="DJ-ACM LOC">
+    <meta name="keywords" content="hackathon">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#212121">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#212121">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#212121">
+    <!-- title -->
+    <title>Lines of Code</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oswald" rel="stylesheet">
+    <!--Slick for slider-->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <!-- Add the new slick-theme.css if you want the default styling-->
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+
+</head>
+
+<body onload="loadProgress()">
+
+
+    <!-- Loader | starts-->
+    <div id="loader" class="valign-wrapper">
+        <div class="row">
+            <div class="col s12">
+                <center>
+                    <div class="anim"></div>
+                    <div class="progress grey darken-4">
+                        <div class="indeterminate grey lighten-1"></div>
+                    </div>
+                    <p class="grey-text text-darken-2 light-heading flow-text"></p>
+                </center>
+            </div>
+        </div>
+    </div>
+    <!-- Loader | ends -->
+
+    <!-- main body | starts -->
+    <div id="main" class="grey lighten-5">
+
+        <!-- Nav bar section -->
+        <div class="navbar-fixed">
+            <nav class="grey darken-4 z-depth-0">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo oswald yellow-accent">LOC</a>
+                    <a href="#" data-activates="mobile-nav" class="button-collapse">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a href="#landing-section" class="waves-effect waves-teal">HOME</a>
+                        </li>
+                        <li>
+                            <a href="#about-us-section" class="waves-effect waves-teal">REGISTER</a>
+                        </li>
+                        <li>
+                            <a href="#domains-section" class="waves-effect waves-teal">STATEMENTS</a>
+                        </li>
+                        <li>
+                            <a href="#judge-section" class="waves-effect waves-teal">JUDGES</a>
+                        </li>
+                        <li>
+                            <a href="#sponsors-section" class="waves-effect waves-teal"> PARTNERS</a>
+                        </li>
+                        <li>
+                            <a href="#prizes-section" class="waves-effect waves-teal">PRIZES</a>
+                        </li>
+                        <li>
+                            <a href="#rules-section" class="waves-effect waves-teal">GUIDELINES</a>
+                        </li>
+                        <li>
+                            <a href="#venue-section" class="waves-effect waves-teal">VENUE</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Side nav -->
+        <ul class="side-nav" id="mobile-nav">
+            <li>
+                <h1 class="side-nav-header oswald yellow-accent center-align" style="font-family: 'Armalite',sans-serif; color: #000000;">LOC
+                </h1>
+            </li>
+            <li>
+                <a href="#landing-section" class="waves-effect waves-teal">HOME</a>
+            </li>
+            <li>
+                <a href="#about-us-section" class="waves-effect waves-teal">REGISTER</a>
+            </li>
+            <li>
+                <a href="#domains-section" class="waves-effect waves-teal">STATEMENTS</a>
+            </li>
+            <li>
+                            <a href="#judge-section" class="waves-effect waves-teal">JUDGES</a>
+                        </li>
+            <li>
+                <a href="#sponsors-section" class="waves-effect waves-teal">PARTNERS</a>
+            </li>
+            <li>
+                <a href="#prizes-section" class="waves-effect waves-teal">PRIZES</a>
+            </li>
+            <li>
+                <a href="#rules-section" class="waves-effect waves-teal">GUIDELINES</a>
+            </li>
+            <li>
+                <a href="#venue-section" class="waves-effect waves-teal">VENUE</a>
+            </li>
+            </li>
+        </ul>
+
+
+        <!-- landing page section -->
+        <div id="landing-section" class="container-fluid section valign-wrapper grey lighten-5 scrollspy">
+            <div class="row container center">
+                
+
+                    <div class="landing-title"><h1 class="landing-head">LINES OF CODE</h1></div>
+                    <br>
+
+                    <!-- <span><h3 id="day">00</h3>
+                <h3 id="hour">00</h3>
+                <h3 id="min">00</h3>
+                <h3 id="sec">00</h3></span> -->
+                    <!-- <h1>
+                    <div id="day"></div>
+                    <div id="hour"></div>
+                    <div id="min"></div>
+                    <div id="sec"></div>
+                </h1> -->
+
+                <div class="row center">
+                    <div class="col s12 m12 l2"></div>
+                    <div class="col s6 m6 l2 ">
+                        <span class="countdown-amount" id="day"></span>
+                        <h3 class="countdown-title">Days</h3>
+                    </div>
+                    <div class="col s6 m6 l2 ">
+                        <span class="countdown-amount" id="hour"></span>
+                        <h3 class="countdown-title">Hours</h3>
+                    </div>
+                    <div class="col s6 m6 l2 ">
+                        <span class="countdown-amount" id="min"></span>
+                        <h3 class="countdown-title">Mins</h3>
+                    </div>
+                    <div class="col s6 m6 l2 ">
+                        <span class="countdown-amount" id="sec"></span>
+                        <h3 class="countdown-title">Secs</h3>
+                    </div>
+                    <div class="col s12 m12 l2"></div>
+                </div>
+               
+
+            </div>
+
+        </div>
+
+        <!-- About -->
+        <div id="about-us-section" class="container-fluid custom_bg scrollspy">
+            <div class="container"><br>
+                <h2 class="center light-heading">LoC?</h2>
+                <p class="light-heading center flow-text">
+                	<br>
+
+                    One of the most awaited events of DJ-ACM, LoC(Lines of Code) is around the corner. With over 200 participants from numerous colleges, the hackathon is a gathering where individual programmers collaborate their codes to make industry-grade projects. 
+                    <br>Testing both, coding and coordination skills, LoC is split into 2 rounds. So, gear up and use this platform to showcase your excellence in various programming domains.
+                    <br> REGISTER FOR FREE!!
+                </p>
+                
+
+                 <div class="row center margin">
+                    <a id="register" class="btn waves-effect waves-white"
+                        href="http://goo.gl/forms/0XscYflXEZAzfcZq1" target="_blank">Register
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Domains -->
+        <!-- //TODO: add aniamtions to the domain icons  -->
+        <!-- <div id="domains-section" class="container-fluid section grey lighten-5 scrollspy valign-wrapper">
+            <div class="container">
+                <h2 class="center dark-heading">PROBLEM STATEMENT</h2> -->
+                <div id="domains-section" class="container-fluid custom_bg scrollspy valign-wrapper">
+            <div class="container">
+                <h2 class="center light-heading">PROBLEMS?</h2>
+                <p class="light-heading	">
+                <br>
+                
+                <div class="row">
+                	<div class="col s12 m6 l4 xl4 center">
+
+                        <img class="responsive-img domain_icon" src="assets/ki.jpg">
+                        <h5 class="light-heading">Kikabhai Hospital</h5>
+                        <p class="content-font-size flow-text light-heading">Hospital is a regional health system dedicated to advancing the health and transforming the lives of the people we serve through excellent clinical quality; accessible, patient-centered, caring service; and unmatched physician and patient commitment.</p>
+
+                    </div>
+                    <!--Machine Learning-->
+
+                    <div class="col s12 m6 l4 xl4 center">
+
+                        <img class="responsive-img domain_icon" src="assets/fire.png">
+                        <h5 class="light-heading">Byculla Fire Station</h5>
+
+                        <p class="content-font-size flow-text light-heading">The Fire Department is committed to creating safer communities through prevention, preparedness, and effective emergency response. It is the mission of the Fire Department to prevent the loss of life and the loss of property by applying all of our professional knowledge and resources. </p>
+
+                    </div>
+                    <div class="col s12 m6 l4 xl4 center">
+<br>
+                        <img class="responsive-img domain_icon" src="assets/idf.jpg">
+                        <h5 class="light-heading">Indian Development Foundation</h5>
+                        <p class="content-font-size flow-text light-heading">India Development Foundation (IDF) is a private, non-profit, research foundation set up as a Trust in 2003. Guided by the principles of equality and non-discrimination, IDF works on a variety of issues with a view to inform policymakers. </p>
+
+                    </div>
+
+                    <!--Computer Vision-->
+
+                    <div class="col s12 m6 l4 xl4 center">
+
+                        <img class="responsive-img domain_icon" src="assets/vf1.jpg">
+                        <h5 class="light-heading">Vivekanand Youth Forum</h5>
+                        <p class="content-font-size flow-text light-heading">Vivekanada Youth Forum is a non-profit, voluntary organization managed by young members who wish to make a difference to their own lives and to empower those less fortunate in areas of education, health, and creativity.</p>
+
+                    </div>
+                    <br>
+
+                    <!--Block Chain-->
+
+                    <div class="col s12 m6 14 xl4 center">
+
+                      <br>  <img class="responsive-img domain_icon" src="assets/yif.png">
+                        <h5 class="light-heading"><br>Young Innovators Foundation</h5>
+
+                        <p class="content-font-size flow-text light-heading">At YIF we provide children the opportunity for integrated learning. We provide a space for children to become independent thinkers, empathetic human beings and change-makers through our various programs</p>
+
+
+                    </div>
+
+                    <!--Big Data-->
+
+                    <!-- <div class="col s12 m6 l4 xl4 center">
+
+                        <img class="responsive-img domain_icon" src="assets/ki.jpg">
+                        <h5 class="light-heading">Kikabhai Hospital</h5>
+                        <p class="content-font-size flow-text light-heading">Hospital will be an innovative, leading regional health system dedicated to advancing the health and transforming the lives of the people we serve through excellent clinical quality; accessible, patient-centered, caring service; and unmatched physician and employee commitment.</p>
+
+                    </div> -->
+
+                    <!--Networking And Security-->
+<!-- 
+	 -->
+
+
+
+
+                </div>
+                <br>
+
+            </div>
+        </div>
+        <div id="judge-section" class="container-fluid custom_bg scrollspy">
+            <!-- <div class="side-gfx side-gfx-left"></div> -->
+
+            <div class="container">
+                <h2 class="center light-heading">JUDGES</h2>
+                <div class="row">
+                	
+                      <div class="col s12 m6 l4 xl4 center">
+<br>
+                        <img class="responsive-img domain_icon" src="assets/idf.jpg">
+                        <h5 class="light-heading"><br>CEO</h5>
+                        
+                      </div>
+                       <!-- <div class="col s12 m6 l4 xl4 ">
+                       	<center>
+                        <img class="responsive-img domain_icon" src="assets/uc.png">
+                        <h5 class="light-heading"><br><br>Coaching Expert</h5>
+                        </center>
+                      </div> -->
+                      <div class="col s12 m6 l4 xl4 center">
+
+                        <img class="responsive-img domain_icon" src="assets/ms.jpg">
+                        <h5 class="light-heading"><br>Manager</h5>
+                        <h5 class="light-heading"><br>Data Scientist</h5>
+                      </div>
+                     
+
+                     <!--  	<div class="col s12 m12 l12">
+                
+                    <center>
+                         <h4 class="center dark-heading">.</h4> 
+                        <div class="valign-wrapper">
+                            <img src="./assets/prize_one.png" class="responsive-img sponsors-img">
+                        </div>
+                    </center>
+                
+
+                <h4 class='center light-heading'>Internship Opportunities</h4>
+
+            </div>
+        </div> -->
+						<center><div class="col s12 m6 l4 xl4 center">
+
+                        <img class="responsive-img domain_icon" src="assets/jk.jpg">
+                        <h5 class="light-heading"><br>CEO</h5>
+                        
+                      </div></center>
+                  </div>
+              </div>
+          </div>
+
+
+
+        <!-- Sponsors -->
+        <div id="sponsors-section" class="container-fluid custom_bg scrollspy">
+            <!-- <div class="side-gfx side-gfx-left"></div> -->
+
+            <div class="container">
+                <h2 class="center light-heading">PARTNERS</h2>
+                <div class="sponsors-container">
+                    <div class="row">
+                        <div class="col s12 m3 l3 ">
+                            <center>
+                                
+                                <div class="sponsors-logo-div valign-wrapper">
+                                    <img src="./assets/sponsors/idf.jpg"
+                                        class="responsive-img sponsors-img">
+                                </div>
+                                <h4 class="center light-heading">IDF</h4>
+                                <br>
+                                <!-- <a class="light-heading flow-text" href="https://www.sogosurvey.com/"
+                                    target="_blank">SoGoSurvey</a> -->
+                            </center>
+                        </div>
+                        <div class="col s12 m3 l3 ">
+                            <center>
+                                
+                                <div class="sponsors-logo-div valign-wrapper">
+                                    <img src="./assets/sponsors/vf1.jpg" class="responsive-img sponsors-img">
+                                </div>
+                                <h4 class="center light-heading">Vivekanand Forum</h4>
+                                <br>
+                               <!--  <a class="light-heading flow-text" href="http://www.mobicule.com/"
+                                    target="_blank">Mobicule</a> -->
+                            </center>
+                        </div>
+                        <div class="col s12 m3 l3 ">
+                            <center>
+                              
+                                <div class="sponsors-logo-div valign-wrapper">
+                                    <img src="./assets/sponsors/mh.png" class="responsive-img sponsors-img">
+                                </div>
+                                <h4 class="center light-heading">Maharashtra Times</h4>
+                                <br>
+                                <!-- <a class="light-heading flow-text" href="https://www.pixtrans.com/" target="_blank">P</a>
+                            </center> -->
+                        </div>
+                        <div class="col s12 m3 l3 ">
+                            <center>
+                               
+                                <div class="sponsors-logo-div valign-wrapper">
+                                    <img src="./assets/sponsors/frapp.png" class="responsive-img sponsors-img">
+                                </div>
+                                 <h4 class="center light-heading">Frapp</h4>
+                                <br>
+                                <!-- <a class="light-heading flow-text" href="https://www.pixtrans.com/" target="_blank">Pix
+                                    Transmission</a> -->
+                            </center>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m3 l3 ">
+                            <center>
+                              
+                                <div class="sponsors-logo-div valign-wrapper">
+                                    <img src="./assets/sponsors/ls.png" class="responsive-img sponsors-img">
+
+                                </div>
+                                  <h4 class="center light-heading">London Shakes</h4>
+                                <br>
+                                <!-- <a class="light-heading flow-text" href="https://www.pixtrans.com/" target="_blank">
+                                    Transmission</a> -->
+                            </center>
+                        </div>
+                        <div class="col s12 m3 l3 ">
+                            <center>
+
+                                
+                                
+                                <div class="sponsors-logo-div valign-wrapper">
+                                    <img src="./assets/sponsors/fb.jpg" class="responsive-img sponsors-img">
+                                </div>
+                                <h4 class="center light-heading">Frisbees Burgers</h4>
+                                <br>
+                                <!-- <a class="light-heading flow-text" href="https://www.pixtrans.com/" target="_blank">Pix
+                                    </a> -->
+                            </center>
+                        </div>
+                        <div class="col s12 m3 l3 ">
+                            <center>
+                               
+                                <div class="sponsors-logo-div valign-wrapper">
+                                    <img src="./assets/sponsors/bj.png" class="responsive-img sponsors-img">
+                                </div>
+                               
+                                 <h4 class="center light-heading">Brijeel</h4>
+                                <!-- <a class="light-heading flow-text" href="https://www.pixtrans.com/" target="_blank">Pixxxxx
+                                    Transmission</a> -->
+                            </center>
+                        </div>
+	                        <div class="col s12 m3 l3 ">
+	                            <center>
+	                                
+	                                <div class="sponsors-logo-div valign-wrapper">
+	                                    <img src="./assets/sponsors/rb1.png" class="responsive-img sponsors-img">
+	                                </div>
+	                                <h4 class="center light-heading">RedBull</h4>
+	                                <br>
+	                                <!-- <a class="light-heading flow-text" href="https://www.pixtrans.com/" target="_blank">Pix
+	                                    Transmission</a> -->
+	                            </center>
+	                        </div>
+	                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Prizes -->
+    <div id="prizes-section" class="container-fluid custom_bg scrollspy ">
+
+        <div class="container row center">
+
+            <h2 class="center light-heading">PRIZES</h2>
+            <br>
+
+           
+
+             <div class="col s12 m4 l4">
+             	</center>
+                <div class="trophy-container center">
+                     <img src="./assets/medal1.png" class="responsive-img sponsors-img center">
+                </div>
+
+                <h4 class='center light-heading'>1st Winner <br>15,000</h4>
+</center>
+            </div>
+
+            <div class="col s12 m4 l4">
+            	<center>
+                <div class="trophy-container center">
+                     <img src="./assets/medal1.png" class="responsive-img sponsors-img center">
+                </div>
+
+                <h4 class='center light-heading'>2nd Winner <br>10,000</h4>
+<br></center>
+            </div>
+
+             <div class="col s12 m4 l4">
+            </div>
+
+             <div class="col s12 m4 l4">
+             	<center>
+                <div class="trophy-container center">
+                    <img src="./assets/medal1.png" class="responsive-img sponsors-img center">
+                </div>
+
+                <h4 class='center light-heading'>3rd Winner <br>5,000</h4>
+</center>
+            </div>
+
+            <div class="col s12 m12 l12">
+                <div class="trophy-container">
+                    <center>
+                         <h4 class="center dark-heading">.</h4> 
+                        <div class="valign-wrapper">
+                            <img src="./assets/prize_one.png" class="responsive-img sponsors-img">
+                        </div>
+                    </center>
+                </div>
+
+                <h4 class='center light-heading'>Internship Opportunities</h4>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Rules -->
+    <div id="rules-section" class="container-fluid custom_bg scrollspy">
+        <div class="container">
+            <h2 class="center light-heading">GUIDELINE</h2>
+            <p class="light-heading center flow-text">
+            	ACM seeks to impose as few rules as possible in order to encourage maximum collaboration and innovation, but there are a few important things to make note of to ensure betterment.
+               <br>1. Teams can be from one to four members. 
+               <br>2. The reporting time is sharp 8:30am on the 16th of March.
+               <br>3. Breakfast, Lunch and Dinner will be provided.
+               <br>4. All participants are requested to get their respective Identity Cards.
+               <br>5. All coders are requested to get their laptops. The solution must be developed during the event only.
+                
+                
+            </p>
+           <!--  <p class="light-heading flow-text center">View the complete Rules here</p> -->
+            <br>
+            
+
+            <!--Modal Trigger Button-->
+
+
+         <!--    <div class="row center">
+                <a href="#modal" class="btn waves-effect waves-teal grey lighten-5 grey-text text-darken-4">Read More</a>
+            </div> -->
+
+
+            <!-- Modal Structure -->
+            <!-- <div id="modal" class="modal">
+                <div class="modal-content">
+                    <h4 class="dark-heading center">GUIDELINES</h4>
+                    <p class="time-font content-font-size">
+                    	1. Teams can be anywhere from two to four members. 
+               <br>2. The reporting time is sharp 8:30am on the 15th of March.
+               <br>3. Lunch, Dinner and Snacks will be provided.
+               <br>4. All participants are requested to get their respective Identity Cards.
+               <br>5. To ensure a level field for all contestants, all coders are requested to get their lapotps, all code,
+                design and assets must be created during the duration of the Hackathon. 
+                <br>6. You are, however, free to make
+                plans, create
+                wireframes, and brainstorm prior to the event. You are allowed to use APIs, open
+                source projects, libraries,
+                and
+                frameworks. <br>
+                7. Selected Projects will be implemented in ngos, hospitals and other government bodies.<br>
+                8. There will be no
+                alcohol, smoking allowed
+                at the event. Behave professionally. <br> Remember that harassment and racist, sexist, or exclusionary
+                jokes are
+                inappropriate
+                for this event. Attendees violating these rules may be asked to leave the Hackathon at the sole
+                discretion
+                of the Hackathon
+                organizers.
+                    </p>
+                </div> -->
+               <!--  <div class="modal-footer">
+                    <a href="#!"
+                        class="time-font modal-action modal-close waves-effect waves-teal btn-flat">Agree</a>
+                </div>
+            </div>
+ -->
+            <!--Modal Trigger Button-->
+
+        </div>
+    </div>
+
+
+    <!-- Venue -->
+    <div id="venue-section" class="container-fluid custom_bg scrollspy ">
+        <div class="container">
+            <h2 class="center light-heading">VENUE</h2>
+            <br>
+            <br>
+
+            <div class="row center hide-on-med-and-up">
+
+                <div class="col s12">
+
+                    <iframe width="100%" height="450" frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgopPKhSyKKAhIq4hoBkMU0uHQ5UehyMQ&q=Dwarkadas+Jivanlal+Sanghvi+College+of+Engineering"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+                <div class="col s12 m6 l6">
+                    <h3 class="light-heading">D.J. Sanghvi College of Engineering</h3>
+                    <p class="light-heading flow-text">No. U-15, J.V.P.D. Scheme, Bhaktivedanta Swami Rd, Opp.Cooper Hospital, Vile Parle, Mumbai, Maharashtra 400056</p>
+                </div>
+
+            </div>
+
+
+            <div class="row center valign-wrapper hide-on-small-only">
+
+                <div class="col s12 m6 l6">
+
+                    <iframe width="100%" height="450" frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgopPKhSyKKAhIq4hoBkMU0uHQ5UehyMQ&q=Dwarkadas+Jivanlal+Sanghvi+College+of+Engineering"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="col s12 m6 l6">
+                    <h3 class="light-heading">D.J. Sanghvi College of Engineering</h3>
+                    <p class="light-heading flow-text">No. U-15, J.V.P.D. Scheme, Bhaktivedanta Swami Rd, Opp.Cooper Hospital, Vile Parle, Mumbai, Maharashtra 400056</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+  <!--   Guidelines -->
+   <!--  <div id="guidelines-section" class="container-fluid section grey darken-4 scrollspy valign-wrapper">
+        <div class="container flow-text light-heading">
+            <h2 class="center">General Guidelines</h2>
+            We are hopeful that you all will be very excited about the ERR_404 2.0 Hackathon. To conduct this event
+            smoothly
+            &
+            in a successful
+            manner. We would like you to follow the below guidelines:
+            <li>Please be present on time for the onsite registration.</li>
+            <li>Bring along valid college ID cards. Without it, admission won't be allowed.</li>
+            <li>Participants are expected to follow the dress code mentioned in the undertaking</li>
+            <li>The schedule is tentative. It may change a bit,so participants are expected to abide as per the changed
+                schedule.
+            </li>
+            <li>Nobody will be allowed to leave the campus between 9:00PM and 6:00AM.</li>
+            <li>Vehicles will not be allowed to park in the campus.</li>
+            <li>It is necessary to get a signed copy of the undertaking. You can find it below.</li>
+            </p>
+            <h4>The problem statements will be released one day before the event.</h4>
+            <br>
+            
+
+        </div>
+
+        <div class="side-gfx side-gfx-left"></div> --> 
+    </div>
+
+   
+    </div>
+
+
+    <!--Footer Section-->
+    <footer class="page-footer grey darken-4 " >
+        <div class="container ">
+            <div class="row center light-heading">
+
+                <!-- <div class="col l4 s12">
+
+                    <p><h5>Website developed and maintained by-</h5></p>
+                    <p>The Programmers Club</p>
+                    pranjal naringrekar is a good girl pranjal
+                </div> -->
+
+                <div class="col xl3 l3 m6 s12">
+                    <h5>Staff </h5>
+                    <ul>
+                    	<li>
+                             Dr. Prof. Narendra Shekokar
+                        </li>
+                        <li>
+                            Prof. Aruna Gawde
+                        </li>
+                        <li>
+                            Prof. Pankaj Sonawane
+                        </li>
+                    </ul>
+                </div>
+                <div class="col xl3 l3 m6 s12">
+                    <h5>Committee</h5>
+                    <ul>
+                        <li>
+                            <a class="light-heading big" href="https://www.facebook.com/djscoe.acm.5"
+                                target="_blank">Jinesh Marfatia</a>
+                        </li>
+                        <li>
+                            <a class="light-heading big" href="https://www.instagram.com/djsanghvi_acm"
+                                target="_blank">Reny Shah</a>
+                        </li>
+                        <li>
+                            <a class="light-heading big" href="https://www.instagram.com/djsanghvi_acm"
+                                target="_blank">Pranjal Naringrekar</a>
+                        </li>
+                        <li>
+                            <a class="light-heading big" href="https://www.instagram.com/djsanghvi_acm"
+                                target="_blank">Anirudh Mukherjee</a>
+                        </li>
+                       <li>
+                            <a class="light-heading big" href="https://www.instagram.com/djsanghvi_acm"
+                                target="_blank">Arjun Dubey</a>
+                        </li>
+                       
+                        
+                    </ul>
+                </div>
+
+                <div class="col xl3 l3 m6 s12">
+                    <h5>Social Site</h5>
+                    <ul>
+                        <li>
+                            <a class="light-heading big" href="https://www.facebook.com/djscoe.acm.5"
+                                target="_blank">Fb: Djsce acm</a>
+                        </li>
+                        <li>
+                            <a class="light-heading big" href="https://www.instagram.com/djsanghvi_acm"
+                                target="_blank">Insta: Djsanghvi_acm</a>
+                        </li>
+                       
+                        
+                    </ul>
+                </div>
+
+                <div class="col xl3 l3 m6 s12">
+                    <h5>Contact Us</h5>
+                    <ul>
+                        <li class="light-heading big">Aayush +91 99874 56466</li>
+                        <li class="light-heading big">Sifat  +91 99673 41877</li>
+                        <li class="light-heading big">Sagar  +91 8108231545</li>
+                        <li class="light-heading big">Maitri  +91 9619457310</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+         <div class="message">
+            <div class="container">
+                <a href="http://www.djacm.in" target="_blank"><p style="margin: 0;
+    text-align: center;
+    color: #ffff;
+    font-size: 22px;
+    ">Made by ACM</p></a>
+            </div>
+        </div>
+    </footer>
+
+    </div>
+
+    </div>
+    <!-- main body | ends -->
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <!-- Firebase JS -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <!-- Scroll Reval -->
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/animation_logic.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/firebase_logic.js"></script>
+    <!--SLICK-->
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+</body>
+
+</html>
